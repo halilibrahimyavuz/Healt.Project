@@ -71,6 +71,9 @@ public class US05_pages
     @FindBy (xpath = "//input[@name='appoDate']")
     public WebElement loginPageDateTextBox;
 
+    @FindBy (xpath = "//span[text()='Appointment date can not be past date!']")
+    public WebElement loginPageDateErrorLine;
+
     @FindBy (xpath = "//span[text()='Send an Appointment Request']")
     public WebElement loginPageSendAnAppointmentRequestButton;
 
