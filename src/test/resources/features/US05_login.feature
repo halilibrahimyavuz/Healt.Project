@@ -1,5 +1,5 @@
 
-@US005 @run
+@US005 @run @DEMO
 Feature: Hastalar (patients), hastahaneden Login-Appointment formu kullanarak randevu (Appointment) olusturabilmelidir
 
   #Background:

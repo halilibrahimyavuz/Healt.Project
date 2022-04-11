@@ -1,4 +1,4 @@
-@US14
+@US14 @DEMO
 Feature: US14_Edit_Inpatient_Islemleri
 
   Scenario: TC01_BA_Physician_olarak_giris_yapar

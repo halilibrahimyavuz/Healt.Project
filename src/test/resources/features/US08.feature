@@ -1,4 +1,4 @@
-
+@DEMO
 Feature:Kullanici giriş yaptiginda Password sekmesi duzenlenebilir olmalidir.
   Admin/Staff/Patient/Doctor
 
