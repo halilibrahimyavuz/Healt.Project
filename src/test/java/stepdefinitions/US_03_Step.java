@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import pages.US_03_04_Page;
 import utilities.ConfigReader;
@@ -31,7 +32,7 @@ public class US_03_Step {
     public void yeTekHaneliŞifreGirerVeYeterliUzunluktaOlmadığınıGörür() {
         RPS.newPassword.sendKeys(ConfigReader.getProperty("eksikPassword1"));
         RPS.comfirmationPassword.sendKeys(ConfigReader.getProperty("eksikPassword1"));
-        String actualkisaYazisi=RPS.kısaPassword.getText();
+        String actualkisaYazisi=RPS.kisaPassword.getText();
         String expectedYazi=ConfigReader.getProperty("karaktersayi4");
         Assert.assertEquals(expectedYazi,actualkisaYazisi);
 
@@ -41,7 +42,7 @@ public class US_03_Step {
     public void yeIkiHaneliŞifreGirerVeYeterliUzunluktaOlmadığınıGörür() {
         RPS.newPassword.sendKeys(ConfigReader.getProperty("eksikPassword2"));
         RPS.comfirmationPassword.sendKeys(ConfigReader.getProperty("eksikPassword2"));
-        String actualkisaYazisi=RPS.kısaPassword.getText();
+        String actualkisaYazisi=RPS.kisaPassword.getText();
         String expectedYazi=ConfigReader.getProperty("karaktersayi4");
         Assert.assertEquals(expectedYazi,actualkisaYazisi);
     }
@@ -50,7 +51,7 @@ public class US_03_Step {
     public void yeÜçHaneliŞifreGirerVeYeterliUzunluktaOlmadığınıGörür() {
         RPS.newPassword.sendKeys(ConfigReader.getProperty("eksikPassword3"));
         RPS.comfirmationPassword.sendKeys(ConfigReader.getProperty("eksikPassword3"));
-        String actualkisaYazisi=RPS.kısaPassword.getText();
+        String actualkisaYazisi=RPS.kisaPassword.getText();
         String expectedYazi=ConfigReader.getProperty("karaktersayi4");
         Assert.assertEquals(expectedYazi,actualkisaYazisi);
     }
@@ -100,30 +101,38 @@ public class US_03_Step {
         Assert.assertEquals(besinciStrength,dorduncuStrength);
 
     }
+    @Then("YE Password olarak sürekli space tuşuna basar")
+    public void yePasswordOlarakSürekliSpaceTuşunaBasar() {
 
-    @Then("YE Password olarak yedi kez  space tuşuna basar")
-    public void yePasswordOlarakYediKezSpaceTuşunaBasar() throws InterruptedException {
+    }
+    @And("YE Password strength seviyesinin değiştiğini görür fakat password olarak kabul etmez")
+    public void yePasswordStrengthSeviyesininDeğiştiğiniGörürFakatPasswordOlarakKabulEtmez() throws InterruptedException {
         String space7="       ";
         RPS.newPassword.sendKeys(space7);
         String ilkStrength=RPS.strength1.getText();
         String ikinciStrength=RPS.strength2.getText();
         Assert.assertEquals(ilkStrength,ikinciStrength);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         String space10="   ";
         RPS.newPassword.sendKeys(space10);
         String ucuncuStrength=RPS.strength3.getText();
         Assert.assertEquals(ucuncuStrength,ikinciStrength);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         String space15="     ";
         RPS.newPassword.sendKeys(space15);
         String dorduncuStrength=RPS.strength4.getText();
         Assert.assertEquals(dorduncuStrength,ucuncuStrength);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         String space20="     ";
-        RPS.newPassword.sendKeys(space20);
+        RPS.newPassword.sendKeys(space20+Keys.TAB);
         String besinciStrength=RPS.strength5.getText();
         Assert.assertEquals(besinciStrength,dorduncuStrength);
+        RPS.kisaPassword.isDisplayed();
+
+
 
 
     }
+
+
 }

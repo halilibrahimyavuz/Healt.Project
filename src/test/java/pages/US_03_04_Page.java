@@ -27,7 +27,7 @@ public class US_03_04_Page {
     public WebElement comfirmationPassword;
 
     @FindBy (xpath = "//div[@class='invalid-feedback']")
-    public WebElement kısaPassword;
+    public WebElement kisaPassword;
 
     @FindBy(xpath = "(//div/ul/li[@class='point'])[1]")
     public WebElement strength1;

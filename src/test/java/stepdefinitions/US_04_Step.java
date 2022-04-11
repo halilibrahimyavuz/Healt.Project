@@ -9,11 +9,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
 
+
 public class US_04_Step {
 
 
 
-    US_03_04_Page RPS=new US_03_04_Page();
+    US_03_04_Page RPS = new US_03_04_Page();
 
     @And("YE Sing in butonuna tıklar ve giris sayfasına gider")
     public void yeSingInButonunaTıklarVeGirisSayfasınaGider() throws InterruptedException {
