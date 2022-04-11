@@ -1,5 +1,5 @@
 
-@US07 @run
+@US07 @run @DEMO
 Feature: Mainpage-Appointment form uzerinden hastalar randevu tarihi olusturabilmelidir
 
   Background:

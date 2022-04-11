@@ -1,3 +1,4 @@
+@DEMO
 Feature: US12 Physician (Doktor) test isteyebilmeli
   (My Appointments/Edit/Request A Test)
 

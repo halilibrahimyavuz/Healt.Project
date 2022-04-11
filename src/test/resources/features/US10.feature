@@ -1,3 +1,5 @@
+
+@DEMO
 Feature:US010-Doktor kullanıcı olarak randevularını görüntüleyebilmelidir.
 
   Background: Medunna Healt Sayfasına gidilir.
