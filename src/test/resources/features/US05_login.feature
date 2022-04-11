@@ -1,4 +1,6 @@
-Feature: Hastalar (patients), hastahaneden randevu (Appointment) olusturabilmelidir
+
+@US005 @run
+Feature: Hastalar (patients), hastahaneden Login-Appointment formu kullanarak randevu (Appointment) olusturabilmelidir
 
   #Background:
    # Given TY kullanici signIn olur
