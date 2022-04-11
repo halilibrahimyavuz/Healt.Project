@@ -273,7 +273,7 @@ Feature: Settings
     Then FK Kullanıcı signOut olur
     Then Sayfa kapanır
   @18
-    @Dynamic5
+    @DEMO
   Scenario Outline: LastName combinasyonu_3
 
     Given FK Kullanıcı ana sayfaya gider
