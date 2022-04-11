@@ -38,9 +38,16 @@ Feature: Hastalar (patients), hastahaneden Login-Appointment formu kullanarak ra
 
      Examples:
        |phone number|
+       |phone number|
        |111-111-111|
        |111-111-11111|
        |1111111111|
+       |111-1111111|
+       |111 111 1111|
+       |111 1111111|
+       |111111 1111|
+       |111-111 1111|
+       |111 111-1111|
     # 1) invalid-9 karakter
     # 2) invalid-11 karakter
     # 3) invalid-10 karakter, -'siz
