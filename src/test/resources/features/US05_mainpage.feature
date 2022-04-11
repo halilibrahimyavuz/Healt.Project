@@ -29,7 +29,25 @@ Feature: Hastalar (patients), hastahaneden Mainpage-Appointment formu kullanarak
       Given TY kullanici Phone kutusuna tiklar ve tab karakterine basar
       Then TY kullanici Phone'in altinda Phone number is required. yazisini gorur
 
-    Scenario: TC13 Mainpage-Appointment form ile appointment olusturan kullanici daha sonra kayıt oldugunda randevusunu goruntuleyebilmelidir
+    Scenario Outline: TC13 Mainpage-Appointment formda Phone textbox'i invalid degerler ile doldurulmamalidir
+      And TY kullanici phone textbox'ini invalid "<phone number>" ile doldurur ve invalid phone number uyarısı alır
+
+      Examples:
+        |phone number|
+        |111-111-111|
+        |111-111-11111|
+        |1111111111|
+        |111-1111111|
+        |111 111 1111|
+        |111 1111111|
+        |111111 1111|
+        |111-111 1111|
+        |111 111-1111|
+    # 1) invalid-9 karakter
+    # 2) invalid-11 karakter
+    # 3) invalid-10 karakter, -'siz
+
+    Scenario: TC14 Mainpage-Appointment form ile appointment olusturan kullanici daha sonra kayıt oldugunda randevusunu goruntuleyebilmelidir
       Given TY kullanici First Name kutusunu doldurur
       And TY kullanici Last Name kutusunu doldurur
       And TY kullanici SSN kutusunu doldurur
