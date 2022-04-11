@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "stepdefinitions",
         tags = "@Dynamic",
-        dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
+        dryRun = true   // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
 )
 
 public class Runner
