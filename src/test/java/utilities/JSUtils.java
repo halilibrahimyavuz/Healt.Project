@@ -19,12 +19,6 @@ public class JSUtils {
         return title;
     }
 
-    public static String getUrlByJS(){
-        JavascriptExecutor jsexecutor= ((JavascriptExecutor) Driver.getDriver());
-        String url=jsexecutor.executeScript("return document.URL").toString();
-        return url;
-    }
-
     //Scrolling all the way down
     public static void scrollDownByJS() {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
@@ -76,4 +70,9 @@ public class JSUtils {
         jse.executeScript(command);
     }
 
+    public static String getUrlByJS(){
+        JavascriptExecutor jsexecutor= ((JavascriptExecutor) Driver.getDriver());
+        String url=jsexecutor.executeScript("return document.URL").toString();
+        return url;
+    }
 }
