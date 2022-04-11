@@ -152,63 +152,68 @@ public class ReusableMethods {
         return element;
     }
 
-    public static String setTheDate (String format, int atMostDay, int atMostMonth, int atMostYear)
-    {
-        // Date date = new Date();
-        // DateFormat tarih = new SimpleDateFormat("dd-MM-yyy");
-        // hangi class'i kullanarak formatlama yaparsan yap, formatlanan date Stringe donusur
-        LocalDate date = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-        date = date.plusYears(atMostYear).plusMonths(atMostMonth).plusDays(atMostDay);
-        String dateF = formatter.format(date);
-
-        return dateF;
-    }
-
-    public static String setTheDateByRandom(String format, int atMostYear, String direction)
-    {
-
-        int day = (int)(Math.random() * 366 + 1);
-        int month = (int)(Math.random() * 13 + 1);
-        int year = (int)(Math.random() * atMostYear + 1);
-
-        LocalDate date = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-
-        direction = direction.toUpperCase(Locale.ROOT);
-        String dateF;
-
-        switch (direction)
+        public static String setTheDate (String format,int atMostDay, int atMostMonth, int atMostYear)
         {
-            case "FEATURE" :
-                date = date.plusYears(year).plusMonths(month).plusDays(day);
-                dateF = formatter.format(date);
-                return dateF;
+            // Date date = new Date();
+            // DateFormat tarih = new SimpleDateFormat("dd-MM-yyy");
+            // hangi class'i kullanarak formatlama yaparsan yap, formatlanan date Stringe donusur
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+            date = date.plusYears(atMostYear).plusMonths(atMostMonth).plusDays(atMostDay);
+            String dateF = formatter.format(date);
 
-            case "PAST" :
-                date = date.minusYears(year).minusMonths(month).minusDays(day);
-                dateF = formatter.format(date);
-                return dateF;
+            return dateF;
+        }
 
-            default:
-                dateF = formatter.format(date);
-                return dateF;
+        public static String setTheDateByRandom (String format,int atMostYear, String direction)
+        {
+
+            int day = (int) (Math.random() * 366 + 1);
+            int month = (int) (Math.random() * 13 + 1);
+            int year = (int) (Math.random() * atMostYear + 1);
+
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+
+            direction = direction.toUpperCase(Locale.ROOT);
+            String dateF;
+
+            switch (direction) {
+                case "FEATURE":
+                    date = date.plusYears(year).plusMonths(month).plusDays(day);
+                    dateF = formatter.format(date);
+                    return dateF;
+
+                case "PAST":
+                    date = date.minusYears(year).minusMonths(month).minusDays(day);
+                    dateF = formatter.format(date);
+                    return dateF;
+
+                default:
+                    dateF = formatter.format(date);
+                    return dateF;
+
+            }
+        }
+
+        public static String stringDateFormat (String date)
+        {
+            String day = date.substring(0, 2);
+            String month = date.substring(3, 5);
+            String year = date.substring(6);
+
+            String formatDateString = year + "-" + month + "-" + day;
+
+            return formatDateString;
+
+            // buraya gelen  gun ay yil gg.aa.yyyy
+            // 2030-01-01  yıl ay gun olmalı
+
 
         }
-    }
-
-    public static String stringDateFormat(String date)
-    {
-        String day = date.substring(0,2);
-        String month = date.substring(3,5);
-        String year = date.substring(6);
-
-        String formatDateString = year + "-" + month + "-" +day;
-
-        return formatDateString;
-
-        // buraya gelen  gun ay yil gg.aa.yyyy
-        // 2030-01-01  yıl ay gun olmalı
-
+    public static void hooverByJS(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView()", element);
+        jse.executeScript("arguments[0].click();", element);
     }
 }
