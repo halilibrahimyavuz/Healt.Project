@@ -3,11 +3,11 @@
 Feature: Admin Olarak Oda Olusturma / Goruntuleme / Guncelleme /Silme
 
   Background:
-    Given TY Kullanici URL Adresine Gider ve Admin Olarak Sign In Olur
+    Given TY Kullanici URL Adresine Gider ve "Admin" Olarak Sign In Olur
     Then TY Kullanici Sign-In Isleminin Basarili Olarak Gerceklestigini Dogrular
-    Then TY Kullanici Navigation Bar'dan Items&Titles'a Tiklar
-    Then TY Kullanici Acilan Dropdown Menuden 'Room' Secenegine Tiklar
-    And TY Kullanici Rooms Sayfasinin Acildigini Dogrular
+    Then TY Kullanici Navigation Bar'dan "Items&Titles" a Tiklar
+    Then TY Kullanici Acilan Dropdown Menuden "Room" Secenegine Tiklar
+    And TY Kullanici 'Rooms' Sayfasinin Acildigini Dogrular
 
 
   Scenario: TC01 Admin, yatan hastalar icin yeni oda olusturabilir.

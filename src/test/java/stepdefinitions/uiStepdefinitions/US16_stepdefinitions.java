@@ -1,11 +1,22 @@
 package stepdefinitions.uiStepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import pages.US05_pages;
+import pages.US16_pages;
+import utilities.JSUtils;
 
 public class US16_stepdefinitions
 {
+
+
+    US05_pages us05_pages = new US05_pages();
+    US16_pages us16_pages = new US16_pages();
+    public static Faker faker = new Faker();
+
+
     @Given("TY Kullanici Create a New Room Butonuna Tiklar")
     public void ty_kullanici_create_a_new_room_butonuna_tiklar() {
         // Write code here that turns the phrase above into concrete actions

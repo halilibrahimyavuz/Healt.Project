@@ -1,14 +1,15 @@
 Feature: Messages by Admin Validate with API and DB
 
   Background:
-    Given TY Kullanici URL Adresine Gider ve Admin Olarak Sign In Olur
+    Given TY Kullanici URL Adresine Gider ve "Admin" Olarak Sign In Olur
     Then TY Kullanici Sign-In Isleminin Basarili Olarak Gerceklestigini Dogrular
-    Then TY Kullanici Navigation Bar'dan Items&Titles'a Tiklar
-    Then TY Kullanici Acilan Dropdown Menuden 'Messages' Secenegine Tiklar
-    And TY Kullanici Rooms Sayfasinin Acildigini Dogrular
+    Then TY Kullanici Navigation Bar'dan "Items&Titles" a Tiklar
+    Then TY Kullanici Acilan Dropdown Menuden "Messages" Secenegine Tiklar
+    And TY Kullanici "Messages" Sayfasinin Acildigini Dogrular
+
 
   Scenario: TC01 Admin, mesaj portalina gidebilir ve tum mesajlari, yazarlarini ve e-postalarini goruntuleyebilir.
-    Then TY Kullanici Messages Tablosunda ID, Name, Email, Subject, Message Basliklarinin Oldugunu Dogrular
+    Then TY Kullanici Messages Tablosunda "ID", "Name", "Email", "Subject", "Message" Basliklarinin Oldugunu Dogrular
     Then TY Kullanici Yeni Mesaj Olusturur
     And TY Kullanici  Olusturulan Bu Mesajin ID Numarasini Kaydeder
     Then TY Kullanici Message Table Header'da ID Alanina Tiklayarak Mesajlari En Son Olusturulandan Baslayarak Siralar

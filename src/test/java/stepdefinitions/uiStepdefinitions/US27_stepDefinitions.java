@@ -1,40 +1,68 @@
 package stepdefinitions.uiStepdefinitions;
 
+import com.github.javafaker.Faker;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import pages.US05_pages;
+import pages.US16_pages;
+import pages.US27_WebTablePage;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.JSUtils;
+
+import static pages.ObjectInitializer.us05_pages;
+import static pages.US16_pages.selectDropdownItem;
+import static pages.US16_pages.selectNavigationBarItem;
 
 public class US27_stepDefinitions
 {
 
-    @Given("TY Kullanici URL Adresine Gider ve Admin Olarak Sign In Olur")
-    public void ty_kullanici_url_adresine_gider_ve_admin_olarak_sign_ın_olur()
-    {
 
+    US05_pages us05_pages = new US05_pages();
+    US16_pages us16_pages = new US16_pages();
+    US27_WebTablePage us27_webTablePage = new US27_WebTablePage();
+    public static Faker faker = new Faker();
+
+
+    @Given("TY Kullanici URL Adresine Gider ve {string} Olarak Sign In Olur")
+    public void tyKullaniciURLAdresineGiderVeOlarakSignInOlur(String role)
+    {
+        us05_pages.login("TY"+role+"Username","TY"+role+"Password");
     }
     @Then("TY Kullanici Sign-In Isleminin Basarili Olarak Gerceklestigini Dogrular")
     public void ty_kullanici_sign_ın_ısleminin_basarili_olarak_gerceklestigini_dogrular()
     {
-
+        JSUtils.clickElementByJS(us05_pages.profileIcon);
+        us05_pages.profileIcon.click();
+        Assert.assertTrue(us05_pages.loginPageSignOutButton.isDisplayed());
     }
-    @Then("TY Kullanici Navigation Bar'dan Items&Titles'a Tiklar")
-    public void ty_kullanici_navigation_bar_dan_ıtems_titles_a_tiklar()
+    @Then("TY Kullanici Navigation Bar'dan {string} a Tiklar")
+    public void tyKullaniciNavigationBarDanATiklar(String item)
     {
-
+        selectNavigationBarItem(item);
     }
     @Then("TY Kullanici Acilan Dropdown Menuden {string} Secenegine Tiklar")
-    public void tyKullaniciAcilanDropdownMenudenMessagesSecenegineTiklar()
+    public void tyKullaniciAcilanDropdownMenudenSecenegineTiklar(String item)
     {
-
+        selectDropdownItem(item);
     }
-    @Then("TY Kullanici Rooms Sayfasinin Acildigini Dogrular")
-    public void ty_kullanici_rooms_sayfasinin_acildigini_dogrular()
+    @And("TY Kullanici {string} Sayfasinin Acildigini Dogrular")
+    public void tyKullaniciSayfasininAcildiginiDogrular(String secim)
     {
-
+        String expectedHeader = ConfigReader.getProperty("TY" + secim + "ExpectedHeader");
+        String actualHeader = us16_pages.header.getText();
+        Assert.assertEquals(expectedHeader,actualHeader);
     }
-    @Then("TY Kullanici Messages Tablosunda ID, Name, Email, Subject, Message Basliklarinin Oldugunu Dogrular")
-    public void ty_kullanici_messages_tablosunda_ıd_name_email_subject_message_basliklarinin_oldugunu_dogrular()
+    @Then("TY Kullanici Messages Tablosunda {string}, {string}, {string}, {string}, {string} Basliklarinin Oldugunu Dogrular")
+    public void tyKullaniciMessagesTablosundaBasliklarininOldugunuDogrular(String arg0, String arg1, String arg2, String arg3, String arg4)
     {
 
+        // varargs yap web table konusunun notlarına bak
+        // dongu yap her eleman list.contains mi baksin
     }
     @Then("TY Kullanici Yeni Mesaj Olusturur")
     public void ty_kullanici_yeni_mesaj_olusturur()
