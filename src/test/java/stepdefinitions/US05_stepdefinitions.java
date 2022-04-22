@@ -36,6 +36,7 @@ public class US05_stepdefinitions
     @Given("TY kullanici signIn olur")
     public void ty_kullanici_sign_ın_olur()
     {
+
         us05_pages.login("TYPatientUsername","TYPatientPassword");
     }
 
