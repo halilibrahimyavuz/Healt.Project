@@ -1,18 +1,12 @@
-package stepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import pages.US08_pages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
-import javax.swing.*;
 
 
 public class US08_stepDefinitions {

@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
@@ -9,11 +9,7 @@ import utilities.ConfigReader;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class US07_stepdefinitions
 {

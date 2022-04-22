@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
