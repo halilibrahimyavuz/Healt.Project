@@ -3,6 +3,7 @@ package stepdefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.plugin.event.Node;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -48,14 +49,14 @@ public class US10_stepdefinitions {
     public void hy_kullanıcı_şifre_olarak_kutusu_doldurulmaldır(String ssnTürü) {
         String fakerssn=faker.idNumber().ssnValid();
          us10Pages.ssnTextBox.sendKeys(fakerssn);
-       //BUNU YAZDIRAMADIM---> System.out.println(us10Pages.ssnTextBox.getText());
-       // BU SEKILDEDE DOGRULAMA YAPAMADIM--->Assert.assertTrue(us10Pages.ssnTextBox.getText().equals(fakerssn));
+        Assert.assertEquals(fakerssn,us10Pages.ssnTextBox.getAttribute("value"));
     }
 
     @Given("HY Kullanıcı isim olarak {string} kutusu doldurulmalıdır.")
     public void hy_kullanıcı_isim_olarak_kutusu_doldurulmalıdır(String isimTürü) {
       String fakerFirstName=faker.name().firstName();
         us10Pages.firstnameTextBox.sendKeys(fakerFirstName);
+        Assert.assertEquals(fakerFirstName,us10Pages.firstnameTextBox.getAttribute("value"));
     }
 
 
@@ -63,6 +64,7 @@ public class US10_stepdefinitions {
     public void hy_kullanıcı_soyisim_olarak_kutusu_doldurulmaldır(String soyisimTürü) {
       String fakerLastName=faker.name().lastName();
         us10Pages.lastnameTextBox.sendKeys(fakerLastName);
+        Assert.assertEquals(fakerLastName,us10Pages.lastnameTextBox.getAttribute("value"));
         ReusableMethods.waitFor(2);
     }
 
@@ -73,6 +75,7 @@ public class US10_stepdefinitions {
                 .sendKeys(Keys.TAB)
                 .perform();
         us10Pages.usernameTextBox.sendKeys(fakerUSerName);
+        Assert.assertEquals(fakerUSerName,us10Pages.usernameTextBox.getAttribute("value"));
         ReusableMethods.waitFor(2);
     }
 
@@ -83,6 +86,7 @@ public class US10_stepdefinitions {
 
         String fakerEmail=faker.internet().emailAddress();
         us10Pages.emailTextBox.sendKeys(fakerEmail);
+        Assert.assertEquals(fakerEmail,us10Pages.emailTextBox.getAttribute("value"));
         ReusableMethods.waitFor(2);
 
         actions.click(us10Pages.emailTextBox)
@@ -99,7 +103,7 @@ public class US10_stepdefinitions {
 
         fakerPassword=faker.internet().password();
         us10Pages.firstpasswordTextBox.sendKeys(fakerPassword);
-
+        Assert.assertEquals(fakerPassword,us10Pages.firstpasswordTextBox.getAttribute("value"));
         actions.sendKeys(Keys.TAB).perform();
 
     }
@@ -108,6 +112,8 @@ public class US10_stepdefinitions {
 
         ReusableMethods.waitFor(2);
         us10Pages.secondpasswordTextBox.sendKeys(fakerPassword);
+        Assert.assertEquals(fakerPassword,us10Pages.secondpasswordTextBox.getAttribute("value"));
+
     }
 
     @Given("HY  Register butonuna tıklanmalıdır.")
@@ -121,9 +127,11 @@ public class US10_stepdefinitions {
     public void hy_başarılı_kayıt_yapıldı_yazısı_görülmelidir() {
     ReusableMethods.waitFor(2);
        //String actualAlertText=us10Pages.toastContainerMassage.getText();
-       //String expectedAlertText="Registration Saved";
+       String expectedAlertText="Registration Saved";
        // System.out.println(actualAlertText);
-       Assert.assertTrue(us10Pages.toastContainerMassage.isDisplayed());
+        System.out.println(us10Pages.toastContainerMassage.getText());
+        Assert.assertTrue(us10Pages.toastContainerMassage.getText().contains(expectedAlertText));
+        Assert.assertTrue(us10Pages.toastContainerMassage.isDisplayed());
     }
 
 
@@ -138,7 +146,7 @@ public class US10_stepdefinitions {
 
     @Then("HY Açılan sekmeden Sing in seçecegi seçilmelidir.")
     public void hy_açılan_sekmeden_sing_in_seçecegi_seçilmelidir() {
-        Assert.assertTrue(us10Pages.singInButonu.isDisplayed());
+      //  Assert.assertTrue(us10Pages.singInButonu.isDisplayed());
         us10Pages.singInButonu.click();
     }
 
@@ -156,8 +164,8 @@ public class US10_stepdefinitions {
     @Given("HY kullanıcı Sing in butonuna basar.")
     public void hy_kullanıcı_sing_in_butonuna_basar() {
         ReusableMethods.waitFor(2);
-        Assert.assertTrue(us10Pages.singInSingInButonu.isDisplayed());
-        ReusableMethods.waitFor(1);
+      //  Assert.assertTrue(us10Pages.singInSingInButonu.isDisplayed());
+        // ReusableMethods.waitFor(1);
         us10Pages.singInSingInButonu.click();
     }
 
@@ -173,9 +181,9 @@ public class US10_stepdefinitions {
     @Given("HY Açılan dropdowndan MY Appointments seçeneği seçilmelidir.")
     public void hy_açılan_dropdowndan_my_appointments_seçeneği_seçilmelidir() {
         ReusableMethods.waitFor(2);
-        String actualText=us10Pages.myAppointmentsButonu.getText();
-        String expectedText="My Appointments";
-        Assert.assertEquals(expectedText,actualText);
+      //  String actualText=us10Pages.myAppointmentsButonu.getAttribute("value");
+       // String expectedText="My Appointments";
+      //  Assert.assertEquals(expectedText,actualText);
         us10Pages.myAppointmentsButonu.click();
 
     }
