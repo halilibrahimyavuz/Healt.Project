@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/Pcucumber2.json",
                 "junit:target/xml-report/Pcucumber2.xml"}, // json ve xml formatta daha guzel raporlar olusturan pluggin
         features = "src/test/resources/features",
-        glue = "stepdefinitions",
+        glue = "uiStepdefinitions",
         tags = "@parallel2",
         dryRun = false
 )
