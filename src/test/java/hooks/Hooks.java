@@ -11,21 +11,16 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Hooks {
+
     @Before
-    public void setUp(){
+    public void setUp(){}
 
-
-    }
-
-    //
     public static RequestSpecification spec;
 
-    @Before( value = "@DeleteUser")
-    public void setup(){
-
+    @Before
+    public void setup()
+    {
         spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
-
-
     }
 
 
