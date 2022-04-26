@@ -57,6 +57,10 @@ public class US16_pages
     @FindBy(xpath= "//div[@class='Toastify__toast-body']")
     public WebElement toastifyContainer;
 
+    @FindBy(xpath= "//div[@class='Toastify__toast-body']")
+    public List<WebElement> toastifyList;
+
+
     @FindBy(xpath= "//h3")
     public WebElement messagePageSonu;
 

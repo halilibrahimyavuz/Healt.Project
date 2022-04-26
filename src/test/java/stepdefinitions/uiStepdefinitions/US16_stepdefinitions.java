@@ -522,6 +522,7 @@ public class US16_stepdefinitions
     @Then("TY Kullanici Room Sayfasinda Acilan PopUp'da Delete Butonuna Tiklar")
     public void tyKullaniciRoomSayfasindaAcilanPopUpDaDeleteButonunaTiklar()
     {
+        ReusableMethods.waitFor(2);
         JSUtils.clickElementByJS(us16_pages.popUpDeleteRoomButton); // --> bad request olusturdu
         // us16_pages.popUpDeleteButton.click(); // --> bad request olusturdu
         //actions.moveToElement(us16_pages.popUpDeleteButton).click().perform(); // --> sonunda calisti
@@ -530,11 +531,17 @@ public class US16_stepdefinitions
         //JSUtils.clickElementByJS(popUpDeleteButonu());
 
        // us16_pages.popUpDeleteRoomButton.click();
-        Driver.getDriver().findElement(us16_pages.deleteRoomButton).click();
-        Driver.getDriver().findElement(us16_pages.deleteRoomButton).findElement(By.xpath(""));
+        //Driver.getDriver().findElement(us16_pages.deleteRoomButton).click();
+        //Driver.getDriver().findElement(us16_pages.deleteRoomButton).findElement(By.xpath(""));
         // ilginc locate ---> eger @FindBy bbilimiyursan ya da bir locate'i stringde tutman gerekiyorsa
         // Stringde tutma By classindasn olusturacagin bir elementte tut
 
+        // yunus hocamdan
+       // Driver.waitAndClick(RPS.testID);
+       // Thread.sleep(1000);
+       // Driver.waitAndClick(RPS.delete);
+       // Thread.sleep(1000);
+       // Driver.waitAndClick(RPS.delete2);
 
     }
 

@@ -262,24 +262,37 @@ public class US27_stepDefinitions
         JSUtils.clickElementByJS(us16_pages.createANewMessagePageSaveButton);
     }
     @Then("TY Kullanici Gelen PopUp Mesajinin Yesil Renkte Oldugunu Dogrulamak Icin Ekran Resmi Alir")
-    public void ty_kullanici_gelen_pop_up_mesajinin_yesil_renkte_oldugunu_dogrulamak_ıcin_ekran_resmi_alir()
-    {
-        try {
-            ReusableMethods.getScreenshot("CreateANewMessage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void ty_kullanici_gelen_pop_up_mesajinin_yesil_renkte_oldugunu_dogrulamak_ıcin_ekran_resmi_alir() throws IOException {
+      // try {
+      //     ReusableMethods.waitFor(1);
+      //     ReusableMethods.getScreenshot("CreateANewMessage");
+      // } catch (IOException e) {
+      //     e.printStackTrace();
+      // }
+        ReusableMethods.waitFor(1);
+        ReusableMethods.getScreenshot("CreateANewMessage");
+
     }
     @Then("TY Kullanici PopUp Uzerinde Yer Alan Mesajin {string}  Icerdigini Dogrular")
     public void ty_kullanici_pop_up_uzerinde_yer_alan_mesajin_ıcerdigini_dogrular(String string)
     {
-        ReusableMethods.waitFor(5);
-        String toastifyText = us16_pages.toastifyContainer.getAttribute("innerText");
-        Assert.assertTrue(toastifyText.contains(string));
+      // ReusableMethods.waitFor(5);
+       //String toastifyText = us16_pages.toastifyContainer.getAttribute("innerText");
+        WebElement yesilToastify = us16_pages.toastifyList.get(0);
+        String toastifyText = yesilToastify.getAttribute("innerText");
+
+        // String toastifyText2 = us16_pages.toastifyContainer.getText();
+      // System.out.println("toastifyText = " + toastifyText);
+      // System.out.println("toastifyText2 = " + toastifyText2);
+       Assert.assertTrue(toastifyText.contains(string));
+      // Assert.assertTrue(toastifyText2.contains(string));
+      // ReusableMethods.waitFor(2);
+        // tostify locateini gormuyor
     }
     @Given("TY Kullanici Messages Table'da Ilk Satirda Yer Alan Mesajin View Butonuna Basar")
     public void ty_kullanici_messages_table_da_ılk_satirda_yer_alan_mesajin_view_butonuna_basar()
     {
+
         JSUtils.clickElementByJS(us16_pages.viewButton);
     }
     @Given("TY Kullanici Acilan Message Sayfasinda Edit Butonuna Tiklar")
