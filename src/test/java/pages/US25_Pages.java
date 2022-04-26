@@ -52,7 +52,7 @@ public class US25_Pages {
     @FindBy(xpath = "//span[.='Appointment date can not be past date!']")
     public WebElement tarihHataliUyariYazisi;
 
-    @FindBy(xpath = "//input[@name='appoDate']")
+    @FindBy(xpath ="//input[@name='appoDate']")
     public WebElement DateTimeBox;
 
     @FindBy(xpath = "//div[@class='Toastify__toast-body']")

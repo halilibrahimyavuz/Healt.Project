@@ -11,14 +11,15 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Hooks {
+
     @Before
     public void setUp(){
-
 
     }
 
     //
     public static RequestSpecification spec;
+    public static RequestSpecification spec01;
 
     @Before( value = "@DeleteUser")
     public void setup(){
@@ -27,6 +28,16 @@ public class Hooks {
 
 
     }
+
+
+  /*  @Before( order = 2 , value = "@us25api")
+    public void setUP(){
+
+        spec01 = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("url25")).build();
+
+    }
+
+   */
 
 
     @Before(order = 1, value = "@UIRegistration")
@@ -64,7 +75,7 @@ public class Hooks {
             scenario.attach(screenshot, "image/png","screenshots");
         }
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 

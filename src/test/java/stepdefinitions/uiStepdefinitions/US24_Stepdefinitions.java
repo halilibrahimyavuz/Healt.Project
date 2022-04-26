@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -144,3 +144,17 @@ public class US24_Stepdefinitions {
         Driver.closeDriver();
     }
 }
+/*
+* user connects to the database
+    #kullanici db ye baglanir.
+
+    * user gets the "*" from "bill" table
+    # select * from bill sorgusu yapar.
+
+    * user read all of the "ssn" column data
+    #kullanicin id sutunun oku.
+
+    * verify "bill" tabel "ssn" column contains "060-06-0541"
+    #bill table'deki ssn sutunundaki 060-06-0541 ssnli hasta kayitli mi onu verify et.
+
+ */

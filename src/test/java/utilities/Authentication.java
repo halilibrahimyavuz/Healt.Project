@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static hooks.Hooks.spec;
+
+
 import static io.restassured.RestAssured.given;
 
 public class Authentication {

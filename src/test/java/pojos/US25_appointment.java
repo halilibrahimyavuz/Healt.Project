@@ -1,13 +1,17 @@
 package pojos;
 
-public class US25Appointment {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
+public class US25_appointment {
 
     private String firstname;
     private String lastname;
     private String Ssn;
     private String email;
     private String phone;
-    private String  DateTime;
+    private String DateTime;
 
     public String getFirstname() {
         return firstname;
@@ -57,21 +61,22 @@ public class US25Appointment {
         DateTime = dateTime;
     }
 
-    public US25Appointment() {
-    }
-
-    public US25Appointment(String firstname, String lastname, String ssn, String email, String phone, String dateTime) {
+    public US25_appointment(String firstname, String lastname, String Ssn, String email, String phone, String DateTime) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.Ssn = ssn;
+        this.Ssn = Ssn;
         this.email = email;
         this.phone = phone;
-        this.DateTime = dateTime;
+        this.DateTime = DateTime;
+    }
+
+    public US25_appointment() {
+
     }
 
     @Override
     public String toString() {
-        return "US25Appointment{" +
+        return "US25_appointment{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", Ssn='" + Ssn + '\'' +
@@ -81,3 +86,4 @@ public class US25Appointment {
                 '}';
     }
 }
+
