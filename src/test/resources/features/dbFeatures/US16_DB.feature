@@ -1,29 +1,18 @@
-Feature: DB ile oda bilgilerini dogrulama
+Feature: DB ile oda bilgilerini dogrulayin
+  # feature seviyesinden calistirinca stepleri gormuyor !!!
 
-  Scenario:
 
+  Scenario Outline: TC01 Oda Bilgilerini Okuma ve Dogrulama
+    Given TY Kullanici Database Ile Baglanti Kurar
+    Then  TY Kullanici "<table>" Tablosundan "<selectRow>" Satirlarini Getirir
+    And   TY Kullanici "room" Tablosunun "<column>" Sutununun "<columnData>" Icerdigini Dogrular
+    Then  TY Kullanici "<id>" ye Sahip Datanin "room" Tablosundaki Bilgilerini Kaydeder Ve Dogrular
+    #Then  TY Kullanici "<id>" ye Sahip Datanin "room" Tablosundaki "<column>" Sutunundaki Bilgilerini Kaydeder Ve Dogrular
+    And   TY Kullanici Database Baglantisini Kapatir
 
-  Scenario Outline: TC08
-
-    #Given Kullanici dataBase e baglanir
-    #And Kullanici "c_test_item " tablosundan "*" satirlarini getirir
-    #Then kullanici "<id>" numarali kisinin "<table>" tablosundaki bilgilerini kaydeder ve dogrular
-    #Then kullanici "<id>" e sahip kisinin "<table>" tablosundaki bilgilerini kaydeder ve dogrular
     Examples:
-      | id | table |
-      | "72790" | c_test_item |
-
-  @db_login_name
-  Scenario: read user information
-    Given user connectts to the database
-    And user gets the "*" from "jhi_user" table
-      # Select * from jhi_user
-    And user read all of the "login" column data
-    And verify "jhi_user" table "login" column contains "muratdoctor"
-      # And verify "country" table "name column contains "senegal"
-      # And verify "c_test_item" table "name column contains "Potassium"
-
-    Then close the database connection
+      |id     |table|column   |columnData     |selectRow|
+      |89576  |room |room_type|PREMIUM_DELUXE |*        |
 
 
-    # bunlara bakarak yapmaya calis
+
