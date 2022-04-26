@@ -70,4 +70,9 @@ public class JSUtils {
         jse.executeScript(command);
     }
 
+    public static String getUrlByJS(){
+        JavascriptExecutor jsexecutor= ((JavascriptExecutor) Driver.getDriver());
+        String url=jsexecutor.executeScript("return document.URL").toString();
+        return url;
+    }
 }
