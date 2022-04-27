@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import pages.US_03_04_Page;
+import pages.US_03_04_17_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
@@ -14,7 +14,7 @@ public class US_04_Step {
 
 
 
-    US_03_04_Page RPS = new US_03_04_Page();
+    US_03_04_17_Page RPS = new US_03_04_17_Page();
 
     @And("YE Sing in butonuna tıklar ve giris sayfasına gider")
     public void yeSingInButonunaTıklarVeGirisSayfasınaGider() throws InterruptedException {

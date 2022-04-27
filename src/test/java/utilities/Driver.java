@@ -1,7 +1,7 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,9 +9,12 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 public class Driver
+
 {
+    private static int timeout = 5;
      private Driver(){} // default constructor'i oldurmek icin kendim parametresiz constructor yazdim
     // ve de kimse buna erisemesin, dolayisiyla da obje uretemesin diye access modifier'ini private yaptik
     // artik kimmse Drievr class'indan obje uretemez !!!!!
@@ -78,7 +81,44 @@ public class Driver
             driver.quit();
         }
         driver = null;
+    }
 
+    public static void wait(int secs) {
+
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void waitAndClick(WebElement element) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                element.click();
+                return;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
+    }
+    public static void waitAndSendText(WebElement element, String text) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                element.sendKeys(text);
+                return;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
     }
 
 }
