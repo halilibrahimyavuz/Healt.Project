@@ -1,5 +1,6 @@
 package utilities;
 
+import io.cucumber.core.plugin.TimelineFormatter;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -12,9 +13,14 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -147,5 +153,101 @@ public class ReusableMethods {
         });
 
         return element;
+    }
+
+        public static String setTheDate (String format,int atMostDay, int atMostMonth, int atMostYear)
+        {
+            // verilen gun ay yıl kadar oncesine gidip tarih olusturur
+            // verilen gun ay yıl kadar sonrasına gidip tarih olusturur
+            // Date date = new Date();
+            // DateFormat tarih = new SimpleDateFormat("dd-MM-yyy");
+            // hangi class'i kullanarak formatlama yaparsan yap, formatlanan date Stringe donusur
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+            date = date.plusYears(atMostYear).plusMonths(atMostMonth).plusDays(atMostDay);
+            String dateF = formatter.format(date);
+
+            return dateF;
+        }
+
+        public static String setTheDateByRandom (String format,int atMostYear, String direction)
+        {
+
+            int day = (int) (Math.random() * 366 + 1);
+            int month = (int) (Math.random() * 13 + 1);
+            int year = (int) (Math.random() * atMostYear + 1);
+
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+
+            direction = direction.toUpperCase(Locale.ROOT);
+            String dateF;
+
+            switch (direction) {
+                case "FEATURE":
+                    date = date.plusYears(year).plusMonths(month).plusDays(day);
+                    dateF = formatter.format(date);
+                    return dateF;
+
+                case "PAST":
+                    date = date.minusYears(year).minusMonths(month).minusDays(day);
+                    dateF = formatter.format(date);
+                    return dateF;
+
+                default:
+                    dateF = formatter.format(date);
+                    return dateF;
+
+            }
+        }
+        public static String setTheDateByRandomWithTime (String format,int atMostYear, String direction)
+        {
+
+        int day = (int) (Math.random() * 366 + 1);
+        int month = (int) (Math.random() * 13 + 1);
+        int year = (int) (Math.random() * atMostYear + 1);
+
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+
+        direction = direction.toUpperCase(Locale.ROOT);
+        String dateF;
+
+        switch (direction) {
+            case "FEATURE":
+                dateTime = dateTime.plusYears(year).plusMonths(month).plusDays(day);
+                dateF = formatter.format(dateTime);
+                return dateF;
+
+            case "PAST":
+                dateTime = dateTime.minusYears(year).minusMonths(month).minusDays(day);
+                dateF = formatter.format(dateTime);
+                return dateF;
+
+            default:
+                dateF = formatter.format(dateTime);
+                return dateF;
+
+        }
+    }
+
+        public static String stringDateFormat (String date)
+        {
+            String day = date.substring(0, 2);
+            String month = date.substring(3, 5);
+            String year = date.substring(6);
+
+            String formatDateString = year + "-" + month + "-" + day;
+
+            return formatDateString;
+
+            // buraya gelen  gun ay yil gg.aa.yyyy
+            // 2030-01-01  yıl ay gun olmalı
+
+        }
+    public static void hooverByJS(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView()", element);
+        jse.executeScript("arguments[0].click();", element);
     }
 }

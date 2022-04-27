@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import static pages.ObjectInitializer.*;
+
+import org.openqa.selenium.support.locators.RelativeLocator;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
@@ -70,6 +72,9 @@ public class US05_pages
 
     @FindBy (xpath = "//input[@name='appoDate']")
     public WebElement loginPageDateTextBox;
+
+    @FindBy (xpath = "//span[text()='Appointment date can not be past date!']")
+    public WebElement loginPageDateErrorLine;
 
     @FindBy (xpath = "//span[text()='Send an Appointment Request']")
     public WebElement loginPageSendAnAppointmentRequestButton;
@@ -152,6 +157,7 @@ public class US05_pages
 
     @FindBy (xpath = "//button[@id='register-submit']")
     public WebElement registrationPageRegisterButton;
+
 
 
     // methods
