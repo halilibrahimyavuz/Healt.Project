@@ -57,10 +57,8 @@ public class WriteToTxt {
 
     }
 
-
-
-
     public static void saveRegistrantData(List<Object> SSNIds){
+
         try{
             //src/resources/testdata/Registrantdata.txt
             FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("database_registrant_data"), false);
