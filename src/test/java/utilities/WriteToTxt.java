@@ -14,7 +14,7 @@ public class WriteToTxt {
     public static void saveRegistrantData(Registrant registrant){
         try{
             //src/resources/testdata/Registrantdata.txt
-            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("api_registrant_data"), true);
+            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("api_registrant_data"), true);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
@@ -33,12 +33,14 @@ public class WriteToTxt {
 
     }
 
+
+
     public static void saveAppointData(Appointment appointment){
 
         try{
 
             //src/resources/testdata/Registrantdata.txt
-            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_records"), true);
+            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("appointment_records"), true);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
             writer.append(appointment+"\n");
@@ -61,7 +63,7 @@ public class WriteToTxt {
     public static void saveRegistrantData(List<Object> SSNIds){
         try{
             //src/resources/testdata/Registrantdata.txt
-            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("database_registrant_data"), false);
+            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("database_registrant_data"), false);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
@@ -84,7 +86,7 @@ public class WriteToTxt {
     public static void saveRegistrantData(Registrant [] registrants){
         try{
             //src/resources/testdata/Registrantdata.txt
-            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("api_all_registrant_data"), false);
+            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("api_all_registrant_data"), false);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 

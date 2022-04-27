@@ -17,7 +17,7 @@ public class ReadTxt {
         try{
 
             //identify file location
-            FileReader fileReader = new FileReader(ConfigurationReader.getProperty("database_registrant_data"));
+            FileReader fileReader = new FileReader(ConfigReader.getProperty("database_registrant_data"));
 
             //Read the records of the file in given location
             BufferedReader br = new BufferedReader(fileReader);
@@ -52,7 +52,7 @@ public class ReadTxt {
         try{
 
             //identify file location
-            FileReader fileReader = new FileReader(ConfigurationReader.getProperty("api_all_registrant_data"));
+            FileReader fileReader = new FileReader(ConfigReader.getProperty("api_all_registrant_data"));
 
             //Read the records of the file in given location
             BufferedReader br = new BufferedReader(fileReader);
@@ -86,7 +86,7 @@ public class ReadTxt {
         try{
 
             //identify file location
-            FileReader fileReader = new FileReader(ConfigurationReader.getProperty("api_all_registrant_data"));
+            FileReader fileReader = new FileReader(ConfigReader.getProperty("api_all_registrant_data"));
 
             //Read the records of the file in given location
             BufferedReader br = new BufferedReader(fileReader);

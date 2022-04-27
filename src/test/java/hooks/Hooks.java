@@ -49,7 +49,7 @@ public class Hooks {
     @Before(order = 1, value = "@Appointment")
     public void navigateToLandingPage(){
 
-       // Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
 
     }
 
@@ -64,7 +64,7 @@ public class Hooks {
             scenario.attach(screenshot, "image/png","screenshots");
         }
 
-        //Driver.closeDriver();
+//        Driver.closeDriver();
 
     }
 
