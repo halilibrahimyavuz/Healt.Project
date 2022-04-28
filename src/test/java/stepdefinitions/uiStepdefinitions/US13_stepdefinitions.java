@@ -71,7 +71,7 @@ public class US13_stepdefinitions {
     public void yt_guncellenen_test_sonuc_icin_show_test_results_tiklar() {
 
         ReusableMethods.waitFor(3);
-        us013_page.testSonuçlarınıGöster.click();
+        us013_page.testSonucGoster.click();
 
     }
 
@@ -87,17 +87,17 @@ public class US13_stepdefinitions {
     public void yt_ilgili_alanlar_kontrol_edilir() {
 
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us013_page.ıdBaslık.isEnabled());
+        Assert.assertTrue(us013_page.idBaslik.isEnabled());
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us013_page.nameBaslık.isEnabled());
+        Assert.assertTrue(us013_page.nameBaslik.isEnabled());
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us013_page.defaultMinBaslık.isEnabled());
+        Assert.assertTrue(us013_page.defaultMinBaslik.isEnabled());
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us013_page.defaultMaxBaslık.isEnabled());
+        Assert.assertTrue(us013_page.defaultMaxBaslik.isEnabled());
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us013_page.testBaslık.isEnabled());
+        Assert.assertTrue(us013_page.testBaslik.isEnabled());
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us013_page.tarihBaslık.isEnabled());
+        Assert.assertTrue(us013_page.tarihBaslik.isEnabled());
         Driver.closeDriver();
 
     }
@@ -105,23 +105,23 @@ public class US13_stepdefinitions {
     @Then("YT Yatili hasta icin ilgili alanlar doldurulur")
     public void yt_yatili_hasta_icin_ilgili_alanlar_doldurulur() {
         ReusableMethods.waitFor(3);
-        us013_page.anamnesisAlanı.clear();
-        us013_page.anamnesisAlanı.sendKeys(faker.medical().diseaseName());
+        us013_page.anamnesisAlani.clear();
+        us013_page.anamnesisAlani.sendKeys(faker.medical().diseaseName());
         ReusableMethods.waitFor(1);
-        us013_page.tedaviAlanı.clear();
+        us013_page.tedaviAlani.clear();
         ReusableMethods.waitFor(1);
-        us013_page.tedaviAlanı.sendKeys(faker.medical().medicineName());
-        us013_page.teşhisAlanı.clear();
+        us013_page.tedaviAlani.sendKeys(faker.medical().medicineName());
+        us013_page.teshisAlani.clear();
         ReusableMethods.waitFor(1);
-        us013_page.teşhisAlanı.sendKeys(faker.medical().symptoms());
+        us013_page.teshisAlani.sendKeys(faker.medical().symptoms());
         ReusableMethods.waitFor(1);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        us013_page.receteAlanı.clear();
+        us013_page.receteAlani.clear();
         ReusableMethods.waitFor(1);
-        us013_page.receteAlanı.sendKeys(faker.food().vegetable());
-        us013_page.tanıAlanı.clear();
+        us013_page.receteAlani.sendKeys(faker.food().vegetable());
+        us013_page.taniAlani.clear();
         ReusableMethods.waitFor(1);
-        us013_page.tanıAlanı.sendKeys(faker.medical().diseaseName().toUpperCase().toLowerCase());
+        us013_page.taniAlani.sendKeys(faker.medical().diseaseName().toUpperCase().toLowerCase());
 
 
     }
