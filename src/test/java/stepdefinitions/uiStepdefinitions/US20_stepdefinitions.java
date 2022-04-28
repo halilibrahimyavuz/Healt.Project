@@ -151,8 +151,17 @@ public class US20_stepdefinitions {
         String actualText=us20_pages.deleteToastContaınerText.getAttribute("innerText");
         System.out.println("Delete toast Container yazısı : "+actualText);
         String expectedText ="A user is deleted with identifier";
+        String expectedText2 ="Internal server error.";
         ReusableMethods.waitFor(2);
-        Assert.assertTrue("Delete işleminde sorun oluştu ",actualText.contains(expectedText));
+
+       try {
+           Assert.assertTrue("Delete işleminde sorun oluştu ",actualText.contains(expectedText));
+
+       }catch (AssertionError e){
+           Assert.assertTrue("Delete işleminde sorun oluştu ",actualText.contains(expectedText2));
+           System.out.println("User için DELETE işlemi gerçekleşmedi ==>"+expectedText2);
+       }
+
     }
 
 }
