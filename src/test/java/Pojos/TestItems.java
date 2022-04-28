@@ -1,32 +1,25 @@
 package Pojos;
 
+import io.cucumber.java.sl.In;
+
 public class TestItems {
 
-/*"createdBy": "medunnaadmin",
-        "createdDate": "2022-03-16T22:55:47.152296Z",
-        "id": 30198,
-        "name": "Na111",
-        "description": "",
-        "price": 50.00,
-        "defaultValMin": "66",
-        "defaultValMax": "100"
+    /*
+    "createdBy": "medunnaadmin",
+            "createdDate": "2022-03-16T22:55:47.152296Z",
+            "id": 30198,
+            "name": "Na111",
+            "description": "",
+            "price": 50.00,
+            "defaultValMin": "66",
+            "defaultValMax": "100"
 
- */
-
-    private String createdDate;
+     */
     private String name;
     private String description;
-    private String price;
-    private String nadefaultValMinme;
+    private Integer price;
+    private String defaultValMin;
     private String defaultValMax;
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
 
     public String getName() {
         return name;
@@ -44,21 +37,22 @@ public class TestItems {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public String getNadefaultValMinme() {
-        return nadefaultValMinme;
+    public String getDefaultValMin() {
+        return defaultValMin;
     }
 
-    public void setNadefaultValMinme(String nadefaultValMinme) {
-        this.nadefaultValMinme = nadefaultValMinme;
+    public void setDefaultValMin(String defaultValMin) {
+        this.defaultValMin = defaultValMin;
     }
+
 
     public String getDefaultValMax() {
         return defaultValMax;
@@ -68,28 +62,26 @@ public class TestItems {
         this.defaultValMax = defaultValMax;
     }
 
-    public TestItems(String createdDate, String name, String description, String price, String nadefaultValMinme, String defaultValMax) {
-        this.createdDate = createdDate;
+    public TestItems() {
+    }
+
+    public TestItems(String name, String description, Integer price, String defaultValMin, String defaultValMax) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.nadefaultValMinme = nadefaultValMinme;
+        this.defaultValMin = defaultValMin;
         this.defaultValMax = defaultValMax;
-    }
-
-    public TestItems() {
     }
 
     @Override
     public String toString() {
-        return "testPojo{" +
-                "createdDate='" + createdDate + '\'' +
-                ", name='" + name + '\'' +
+        return "TestItems{" +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price='" + price + '\'' +
-                ", nadefaultValMinme='" + nadefaultValMinme + '\'' +
+                ", defaultValMin='" + defaultValMin + '\'' +
                 ", defaultValMax='" + defaultValMax + '\'' +
                 '}';
-
     }
+
 }

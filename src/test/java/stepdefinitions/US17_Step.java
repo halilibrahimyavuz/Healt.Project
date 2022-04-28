@@ -16,7 +16,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
-import static hooks.Hook17.spec17;
+
 import static io.restassured.RestAssured.given;
 
 public class US17_Step {
@@ -135,33 +135,4 @@ public class US17_Step {
         Driver.closeDriver();
     }
 
-    //######################################################################################
-
-    //https://www.medunna.com/api/c-test-items
-
-    @Given("YE gerekli path paramsları oluşturur")
-    public void yeGerekliPathParamslarıOluşturur() {
-
-        spec17 = new RequestSpecBuilder().setBaseUri("http://medunna.com").build();
-        spec17.pathParams("first", "api", "second", "c-test-items");
-    }
-
-    @Then("YE expected {string}, {string}, {string}, {string}, {string} dataları girer")
-    public void yeExpectedDatalarıGirer(String name, String description, String price, String defaultValMin, String defaultValMax) {
-
-        testItem.setName(name);
-        testItem.setDescription(description);
-        testItem.setPrice(price);
-        testItem.setNadefaultValMinme(defaultValMin);
-        testItem.setDefaultValMax(defaultValMax);
-    }
-
-    @Then("YE request gonderir ve respons alir")
-    public void yeRequestGonderirVeResponsAlir() {
-
-        response = given().spec(spec17).contentType(ContentType.JSON)
-                .body(testItem)
-                .when()
-                .post("{/first}/{second}");
-    }
 }

@@ -11,62 +11,62 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Hooks {
-    @Before
-    public void setUp(){
+   //@Before
+   //public void setUp(){
 
 
-    }
+   //}
 
 
-    //
-    public static RequestSpecification spec;
+   ////
+   //public static RequestSpecification spec;
 
-    @Before( value = "@DeleteUser")
-    public void setup(){
+   //@Before( value = "@DeleteUser")
+   //public void setup(){
 
-        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
-
-
-    }
+   //    spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
 
 
-    @Before(order = 1, value = "@UIRegistration")
-    public void navigateToRegistrationPage(){
+   //}
 
-        Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
 
-    }
+   //@Before(order = 1, value = "@UIRegistration")
+   //public void navigateToRegistrationPage(){
 
-//    @Before( value = "@DBUsers")
-//    public void createNewDBConnection(){
+   //    Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+
+   //}
+
+// //  @Before( value = "@DBUsers")
+// //  public void createNewDBConnection(){
 //
-//        createConnection(ConfigurationReader.getProperty("db_credentials_url"),
-//                ConfigurationReader.getProperty("db_username"),
-//                ConfigurationReader.getProperty("db_password"));
+// //      createConnection(ConfigurationReader.getProperty("db_credentials_url"),
+// //              ConfigurationReader.getProperty("db_username"),
+// //              ConfigurationReader.getProperty("db_password"));
 //
-//    }
+// //  }
 
 
-    @Before(order = 1, value = "@Appointment")
-    public void navigateToLandingPage(){
+   //@Before(order = 1, value = "@Appointment")
+   //public void navigateToLandingPage(){
 
-       // Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+   //   // Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
 
-    }
+   //}
 
 
 
-    @After
-    public void tearDown(Scenario scenario){
+   //@After
+   //public void tearDown(Scenario scenario){
 
-        if (scenario.isFailed()) {
-            final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+   //    if (scenario.isFailed()) {
+   //        final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
 
-            scenario.attach(screenshot, "image/png","screenshots");
-        }
+   //        scenario.attach(screenshot, "image/png","screenshots");
+   //    }
 
-        //Driver.closeDriver();
+   //    //
 
-    }
+   //}
 
 }
