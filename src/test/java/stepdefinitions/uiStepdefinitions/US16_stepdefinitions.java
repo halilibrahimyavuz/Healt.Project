@@ -54,7 +54,7 @@ public class US16_stepdefinitions
     @Then("TY Kullanici Room Type Secer")
     public void ty_kullanici_room_type_secer()
     {
-       Driver.selectAnRandomItemFromDropdown(us16_pages.createANewRoomPageRoomTypeDropDown);
+  //Driver.selectAnRandomItemFromDropdown(us16_pages.createANewRoomPageRoomTypeDropDown);
     }
 
     @Then("TY Kullanici Price TextBox'ina Tiklar ve Valid Bir Ifade Ile Doldurur")
@@ -424,7 +424,7 @@ public class US16_stepdefinitions
         JSUtils.clickElementByJS(us16_pages.createANewRoomButton);
         int rastgeleSayi = (int)(Math.random() *10000 + 10000);
         us16_pages.createANewRoomPageRoomNumberTextBox.sendKeys(""+rastgeleSayi);
-        Driver.selectAnRandomItemFromDropdown(us16_pages.createANewRoomPageRoomTypeDropDown);
+        //Driver.selectAnRandomItemFromDropdown(us16_pages.createANewRoomPageRoomTypeDropDown);
         us16_pages.createANewRoomPagePriceTextBox.sendKeys(faker.number().digits(3));
         String metin = faker.lorem().paragraph(5);
         Boolean buyukMu = metin.length()>=255;

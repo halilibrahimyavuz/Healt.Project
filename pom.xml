@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -106,17 +107,17 @@
         <!-- Buradan asagida kalan kisim api icin -->
 
         <dependency>
-            <groupId>io.rest-assured</groupId>  <!-- Temel API Test kutuphanelerini icerir -->
+            <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.3.0</version>
         </dependency>
 
-        <!-- <dependency>
-             <groupId>io.rest-assured</groupId>
-             <artifactId>rest-assured</artifactId>
-             <version>4.5.1</version>
-             <scope>test</scope>
-         </dependency>  -->
+        <dependency>
+            <groupId>io.rest-assured</groupId> <!-- Temel API Test kutuphanelerini icerir -->
+            <artifactId>rest-assured</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/org.json/json -->
@@ -172,16 +173,7 @@
             <version>42.2.8</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.javiercanillas</groupId>
-            <artifactId>jackson-masker</artifactId>
-            <version>0.9.8</version>
-        </dependency>
+
 
 
     </dependencies>
@@ -251,8 +243,5 @@
 
         </plugins>
     </build>
-
-
-
 
 </project>
