@@ -15,10 +15,10 @@ import org.junit.runner.RunWith;
         glue = "apiStepdefinitions",
         tags = "@US15API",
         dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
+
 )
 
-public class API_Runner
-{
+public class API_Runner{
     // !!!!! EGER API VE DB ICIN FARKLI FEATURE FILE'LAR OLUSTURURSAN 145. SATIRDAKI FEATURES KISMINDAKİ PATH'I
     // GUNCELLEMEN GEREK !!!!!
 }
