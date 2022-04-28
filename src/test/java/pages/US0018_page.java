@@ -17,10 +17,10 @@ public class US0018_page {
     public WebElement SigninButon;
 
     @FindBy(xpath = "//input[@name='username']")
-    public WebElement Username;
+    public WebElement UsernameBA;
 
     @FindBy(xpath = "//input[@name='password']")
-    public WebElement Password;
+    public WebElement PasswordBA;
 
     @FindBy(xpath = "(//span[.='Sign in'])[3]")
     public WebElement SigninEnter;
