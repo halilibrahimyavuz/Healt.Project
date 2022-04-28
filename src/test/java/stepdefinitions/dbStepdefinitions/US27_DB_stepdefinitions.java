@@ -13,7 +13,7 @@ public class US27_DB_stepdefinitions
     public void ty_kullanici_ye_sahip_datanin_cmessage_tablosundaki_bilgilerini_kaydeder_ve_dogrular(String id, String cmessage)
     {
         String myDynamicQuery = "Select * from cmessage Where id = " + id;
-        String query = "Select * from cmessage Where id = " +  "\""+ id +"\"";
+        String query = "Select * from cmessage Where id = " +  "\'"+ id +"\'";
         DBUtils.executeQuery(myDynamicQuery);
 
         //List<Object> actualVeri=DBUtils.getRowList("Select * from room where id='1451'");

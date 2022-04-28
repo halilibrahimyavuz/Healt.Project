@@ -38,7 +38,8 @@ public class US16_DB_stepdefinitions
     public void tyKullaniciYeSahipDataninTablosundakiBilgileriniKaydederVeDogrular(String id, String room)
     {
         String myDynamicQuery = "Select * from room Where id = " + id;
-        String query = "Select * from room Where id = " +  "\""+ id +"\"";
+        String query = "Select * from room Where id = " +  "\'"+ id +"\'";
+
         DBUtils.executeQuery(myDynamicQuery);
 
         //List<Object> actualVeri=DBUtils.getRowList("Select * from room where id='1451'");
