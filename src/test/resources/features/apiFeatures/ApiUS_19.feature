@@ -9,4 +9,4 @@ Feature: api test item creation
 
     Examples: test data
       |name|description|price|defMinVal|defMaxVal|
-      |H1bAc9|5 AYLIK SEKER|580|2       |16       |
+      |H1bAc8|5 AYLIK SEKER|570|3       |16       |

@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;

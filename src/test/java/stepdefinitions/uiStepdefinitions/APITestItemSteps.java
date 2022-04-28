@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
