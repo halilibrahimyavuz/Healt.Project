@@ -84,7 +84,7 @@ public class US12_stepdefinitions {
     }
     @Given("EA Kullanici sayfayi kapatir")
     public void ea_kullanici_sayfayi_kapatir() {
-      Driver.closeDriver();
+    Driver.closeDriver();
     }
 
     //US0012-TC002

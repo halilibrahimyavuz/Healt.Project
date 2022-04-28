@@ -26,33 +26,51 @@ public class US11_stepdefinitions {
     public void hy_sayfanın_en_altındakı_make_an_appointment_bölümüne_gidilir() {
         Assert.assertTrue(us11Page.makeAnAppointmentText.isDisplayed());
         ReusableMethods.hooverByJS(us11Page.makeAnAppointmentText);
+        System.out.println(us11Page.makeAnAppointmentText.getText());
+
     }
 
-
+    @Given("HY Sayfanın en üst sağ kısmındaki Profile Ikonu'na tiklanir.")
+    public void hySayfanınEnÜstSağKısmındakiProfileIkonuNaTiklanir() {
+        us10Pages.profilIkonuButonu.click();
+    }
     @Then("HY İsim bölümüne {string} girilir.")
     public void hy_isim_bölümüne_girilir(String string) {
-     us11Page.firstnameTextBox.sendKeys(faker.name().firstName());
+    String fakerFirstName=faker.name().firstName();
+     us11Page.firstnameTextBox.sendKeys(fakerFirstName);
+     Assert.assertEquals(fakerFirstName,us10Pages.firstnameTextBox.getAttribute("value"));
+
     }
 
     @Then("HY Soyisim bölümüne {string} girilir.")
     public void hy_soyisim_bölümüne_girilir(String string) {
-        us11Page.lastNameTextBox.sendKeys(faker.name().lastName());
+        String fakerLastname=faker.name().lastName();
+        us11Page.lastNameTextBox.sendKeys(fakerLastname);
+        Assert.assertEquals(fakerLastname,us10Pages.lastnameTextBox.getAttribute("value"));
+
     }
 
     @Then("HY Şifre yerine {string} girilir.")
     public void hy_şifre_yerine_girilir(String ssn) {
-        us11Page.ssnTextBox.sendKeys(faker.idNumber().ssnValid());
+        String fakerSSN=faker.idNumber().ssnValid();
+        us11Page.ssnTextBox.sendKeys(fakerSSN);
+        Assert.assertEquals(fakerSSN,us11Page.ssnTextBox.getAttribute("value"));
     }
 
     @Then("HY Uygun bir {string} girilir.")
     public void hy_uygun_bir_girilir(String email) {
-      us11Page.emailTextBox.sendKeys(faker.internet().emailAddress());
+        String fakerEmail=faker.internet().emailAddress();
+      us11Page.emailTextBox.sendKeys(fakerEmail);
+        Assert.assertEquals(fakerEmail,us11Page.emailTextBox.getAttribute("value"));
 
     }
 
     @Then("HY Kullanılan {string} girilir.")
     public void hy_kullanılan_girilir(String phone) {
-      us11Page.phoneTextBox.sendKeys("555-555-5555");
+        String phoneNumber="555-555-5555";
+      us11Page.phoneTextBox.sendKeys(phoneNumber);
+        Assert.assertEquals(phoneNumber,us11Page.phoneTextBox.getAttribute("value"));
+
         ReusableMethods.waitFor(1);
 
     }
@@ -73,26 +91,25 @@ public class US11_stepdefinitions {
 
     @Then("HY Send an Appointment Date time butonuna tiklanir.")
     public void hy_send_an_appointment_date_time_butonuna_tıklanır() {
-     //  us11Page.sendAppointmentButonu.click();
+     us11Page.sendAppointmentButonu.click();
 
     }
 
     @Given("HY Anasayfadan Başarılı kayıt yapıldı yazısı görülmelidir.")
     public void hyAnasayfadanBaşarılıKayıtYapıldıYazısıGörülmelidir() {
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(us11Page.anaSaydadanBasarılıKayıtOlusturmaYazısı.isDisplayed());
+        String expectedText="Appointment registration saved!";
+        Assert.assertTrue(us11Page.anaSaydadanBasarılıKayıtOlusturmaYazısı.getText().contains(expectedText));
+        System.out.println(us11Page.anaSaydadanBasarılıKayıtOlusturmaYazısı.getText());
 
-      //  String actualText=us11Page.anaSaydadanBasarılıKayıtOlusturmaYazısı.getText();
-      //  System.out.println(actualText);
-      //  String expectedText="Appointment registration saved!";
-      //  Assert.assertEquals(expectedText,actualText);
     }
 
     @Then("HY Görüntülenen randevu bilgilerinin en solundaki Edit Butonuna tıklamalıdır.")
     public void hy_görüntülenen_randevu_bilgilerinin_en_solundaki_edit_butonuna_tıklamalıdır() {
         Assert.assertTrue(us11Page.editButonu.isDisplayed());
-        us11Page.editButonu.click();
         ReusableMethods.waitFor(2);
+        us11Page.editButonu.click();
+
 
     }
 
@@ -191,6 +208,7 @@ public class US11_stepdefinitions {
         //bu ıksıı ııcın uygun assert u kurmak lazım
 
     }
+
 
 
 }

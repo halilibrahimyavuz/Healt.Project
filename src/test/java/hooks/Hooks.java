@@ -31,7 +31,7 @@ public class Hooks {
 
     }
 
-        //    @Before( value = "@DBUsers")
+//    @Before( value = "@DBUsers")
 //    public void createNewDBConnection(){
 //
 //        createConnection(ConfigurationReader.getProperty("db_credentials_url"),
@@ -49,7 +49,6 @@ public class Hooks {
     }
 
 
-
     @After
     public void tearDown(Scenario scenario){
 
@@ -65,16 +64,3 @@ public class Hooks {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

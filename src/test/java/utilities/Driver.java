@@ -231,6 +231,12 @@ public class Driver
             }
         }
     }
+    public static void selectAnRandomItemFromDropdown(WebElement item) {
+        // wait(5);
+        Select select = new Select(item);
+        int rastgeleSayi = (int)(Math.random() * select.getOptions().size());
+        select.getOptions().get(rastgeleSayi).click();
+    }
     /**
      * Clicks on an element using JavaScript
      *
@@ -293,16 +299,3 @@ public class Driver
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
