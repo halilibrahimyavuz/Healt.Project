@@ -11,6 +11,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Hooks {
+<<<<<<< HEAD
    //@Before
    //public void setUp(){
 
@@ -25,6 +26,19 @@ public class Hooks {
    //public void setup(){
 
    //    spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
+=======
+
+    @Before
+    public void setUp(){}
+
+    public static RequestSpecification spec;
+
+    @Before
+    public void setup()
+    {
+        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
+    }
+>>>>>>> master
 
 
    //}
@@ -50,7 +64,11 @@ public class Hooks {
    //@Before(order = 1, value = "@Appointment")
    //public void navigateToLandingPage(){
 
+<<<<<<< HEAD
    //   // Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+=======
+        Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+>>>>>>> master
 
    //}
 
@@ -65,7 +83,12 @@ public class Hooks {
    //        scenario.attach(screenshot, "image/png","screenshots");
    //    }
 
+<<<<<<< HEAD
    //    //
+=======
+        Driver.closeDriver();
+
+>>>>>>> master
 
    //}
 
