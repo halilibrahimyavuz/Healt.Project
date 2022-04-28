@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"}, // bu satir ile html,xml,json report olusturabiliyoruz
         features = "src/test/resources/features/apiFeatures", // YENI FERATURE OLUSTURURSAN BURAYI GUNCELLE
         glue = "apiStepdefinitions",
-        tags = "@Physician_Api_test",
-        dryRun = false
-        // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
+        tags = "@US15API",
+        dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
+
 )
 
 public class API_Runner{
