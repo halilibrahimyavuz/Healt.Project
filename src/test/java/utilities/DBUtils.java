@@ -1,30 +1,29 @@
 package utilities;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class DBUtils {
-
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
-
 
 
     /**
      * DBUtils.createConnection(); -> to connect to teh database
      */
     public static void createConnection() {
-//        String url = "jdbc:postgresql://157.230.48.97:5432/gmibank_db";
-//        String username="techprodb_user";
-//        String password="Techpro_@126";
-
-        String url=ConfigReader.getProperty("db_credentials_url");
-        String username=ConfigReader.getProperty("db_username");
-        String password=ConfigReader.getProperty("db_password");
+        String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
+        String username="medunnadb_user";
+        String password="Medunnadb_@129";
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
