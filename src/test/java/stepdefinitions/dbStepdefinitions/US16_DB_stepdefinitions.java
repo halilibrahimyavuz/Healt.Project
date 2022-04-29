@@ -128,29 +128,7 @@ public class US16_DB_stepdefinitions
         DBUtils.closeConnection();
     }
 
-    //kubra hocammın
-    @Then("kullanici {string} e sahip kisinin {string} tablosundaki bilgilerini kaydeder ve dogrular")
-    public void kullanici_e_sahip_kisinin_tablosundaki_bilgilerini_kaydeder_ve_dogrular(String table, String id) {
-        // String quary="Select * from "+table+" where id = '"+id+"'";
-        List<Object> actualVeri=DBUtils.getRowList("Select * from c_test_item where id='72782'");
-        List<Object> expectedVeri=new ArrayList<>();
-        // expectedVeri.add("72782");
-        expectedVeri.add("aaaaaitemCeran");
-        expectedVeri.add("yeni bir test item denemesidir");
-        expectedVeri.add("300.00");
-        expectedVeri.add("20");
-        expectedVeri.add("120");
-        expectedVeri.add("2022-04-17 01:10:44.116577");
-        expectedVeri.add("---aaaaadminceran");
-        System.out.println(actualVeri);
-        System.out.println(expectedVeri);
-        Assert.assertTrue(actualVeri.contains("20"));
-        Assert.assertTrue(actualVeri.contains("120"));
-        Assert.assertTrue(actualVeri.contains("120"));
-        //Assert.assertTrue(actualVeri.contains("2022-04-17 01:10:44.116577"));
-        Assert.assertTrue(actualVeri.contains("aaaaaitemCeran"));
-        Assert.assertTrue(actualVeri.contains("yeni bir test item denemesidir"));
+
 
 }
 
-}
