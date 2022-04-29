@@ -3,7 +3,7 @@ Feature: US009 Staff (Personel), hasta bilgilerini görebilmeli, düzenleyebilme
 
   Scenario: TC01_Staff My Pages sekmesinden hasta bilgilerini görebilmelidir.
     Given TG kullanici "MedunnaUrl" sayfasina gider
-    And TG sayfanin sağ üst köşesinde yeralan insan ikonuna tıklar
+    And TG sayfanin sag üst köşesinde yeralan insan ikonuna tıklar
     Then TG acilan dropdown menude Sign in butonuna tıklar
     And TG username olarak "StaffUsernameTG" girer
     And TG password olarak "StaffPasswordTG" girer
@@ -16,7 +16,7 @@ Feature: US009 Staff (Personel), hasta bilgilerini görebilmeli, düzenleyebilme
 
   Scenario: TC02_Staff bütün hasta bilgilerini düzenleyebilmelidir.
     Given TG kullanici "MedunnaUrl" sayfasina gider
-    And TG sayfanin sağ üst köşesinde yeralan insan ikonuna tıklar
+    And TG sayfanin sag üst köşesinde yeralan insan ikonuna tıklar
     Then TG acilan dropdown menude Sign in butonuna tıklar
     And TG username olarak "StaffUsernameTG" girer
     And TG password olarak "StaffPasswordTG" girer
@@ -30,7 +30,7 @@ Feature: US009 Staff (Personel), hasta bilgilerini görebilmeli, düzenleyebilme
 
   Scenario: TC03_Staff, SSN'lerine göre yeni bir başvuru sahibi arayabilmeli ve tüm kayıt bilgilerinin doldurulduğunu görebilmelidir.
     Given TG kullanici "MedunnaUrl" sayfasina gider
-    And TG sayfanin sağ üst köşesinde yeralan insan ikonuna tıklar
+    And TG sayfanin sag üst köşesinde yeralan insan ikonuna tıklar
     Then TG acilan dropdown menude Sign in butonuna tıklar
     And TG username olarak "StaffUsernameTG" girer
     And TG password olarak "StaffPasswordTG" girer
@@ -45,7 +45,7 @@ Feature: US009 Staff (Personel), hasta bilgilerini görebilmeli, düzenleyebilme
 
   Scenario: TC04_Staff herhangi bir hasta bilgisini silebilir.
     Given TG kullanici "MedunnaUrl" sayfasina gider
-    And TG sayfanin sağ üst köşesinde yeralan insan ikonuna tıklar
+    And TG sayfanin sag üst köşesinde yeralan insan ikonuna tıklar
     Then TG acilan dropdown menude Sign in butonuna tıklar
     And TG username olarak "StaffUsernameTG" girer
     And TG password olarak "StaffPasswordTG" girer
@@ -61,7 +61,7 @@ Feature: US009 Staff (Personel), hasta bilgilerini görebilmeli, düzenleyebilme
 
   Scenario: TC05_Staff hastaları silememelidir.
     Given TG kullanici "MedunnaUrl" sayfasina gider
-    And TG sayfanin sağ üst köşesinde yeralan insan ikonuna tıklar
+    And TG sayfanin sag üst köşesinde yeralan insan ikonuna tıklar
     Then TG acilan dropdown menude Sign in butonuna tıklar
     And TG username olarak "StaffUsernameTG" girer
     And TG password olarak "StaffPasswordTG" girer
@@ -75,7 +75,7 @@ Feature: US009 Staff (Personel), hasta bilgilerini görebilmeli, düzenleyebilme
 
   Scenario: TC06_Staff hastaları SSN kimliklerine göre arayabilmelidir.
     Given TG kullanici "MedunnaUrl" sayfasina gider
-    And TG sayfanin sağ üst köşesinde yeralan insan ikonuna tıklar
+    And TG sayfanin sag üst köşesinde yeralan insan ikonuna tıklar
     Then TG acilan dropdown menude Sign in butonuna tıklar
     And TG username olarak "StaffUsernameTG" girer
     And TG password olarak "StaffPasswordTG" girer

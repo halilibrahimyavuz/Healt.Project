@@ -17,16 +17,17 @@ public class Hooks {
 
     }
 
+
+
+
     //
     public static RequestSpecification spec;
     public static RequestSpecification spec01;
 
-    @Before( value = "@DeleteUser")
-    public void setup(){
-
+    @Before
+    public void setup()
+    {
         spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
-
-
     }
 
 
@@ -60,10 +61,9 @@ public class Hooks {
     @Before(order = 1, value = "@Appointment")
     public void navigateToLandingPage(){
 
-       // Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
 
     }
-
 
 
     @After
@@ -75,7 +75,10 @@ public class Hooks {
             scenario.attach(screenshot, "image/png","screenshots");
         }
 
-       // Driver.closeDriver();
+
+        Driver.closeDriver();
+
+
 
     }
 

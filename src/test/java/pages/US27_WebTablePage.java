@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class US27_WebTablePage {
@@ -15,8 +16,8 @@ public class US27_WebTablePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//thead//tr//th")
-    public List<WebElement> headerBirinciSatirDatalariList;
+    @FindBy(xpath = "//thead/tr/th/span")
+    public List<WebElement> headerDatalariList;
 
     @FindBy(xpath = "//tbody")
     public WebElement tumBodyWebElementi;
@@ -61,6 +62,18 @@ public class US27_WebTablePage {
         for (int i = 1; i <= satirSayisi; i++) {
             System.out.println(hucreWebElementGetir(i, sutun));
         }
+    }
+
+    public List<String> sutunGetir(int sutun) {
+        // table'da sutun yapisi olmadigindan her satira gidipo istenilen sutuna denk gelen hucredeki datayi alacagiz
+
+        // her bir satirdaki istenen sutun elementini yazdirabilmek icin once satir sayisini bilmeye ihtiyacimiz var
+        List<String> sutunElemanlariList = new ArrayList<>();
+        int satirSayisi = satirlarListesi.size();
+        for (int i = 1; i <= satirSayisi; i++) {
+            sutunElemanlariList.add(hucreWebElementGetir(i, sutun));
+        }
+        return sutunElemanlariList;
     }
 
 }

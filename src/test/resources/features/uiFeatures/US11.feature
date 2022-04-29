@@ -35,7 +35,7 @@ Feature:My Appointments Physician (Doctor) tarafından düzenlenebilmelidir.
 
   Scenario:TC03-Doktor gerekli alanlara "Anamnesis, Treatment ve Diagnosis" yazabilmelidir.
     Given HY "url" adresine gidilir
-    Given HY Sayfanın en üst sağ kısmındaki Profile Ikonu'na tiklanir.
+    Given HY Sayfanın en üst sağ kısmındaki Profile Ikonu'na Tıklanır.
     Then  HY Açılan sekmeden Sing in seçecegi seçilmelidir.
     Then  HY Kullanıcı kayıtlı olduğu "DoktorUserName" i girmelidir.
     Then  HY Kullanıcı kayıtlı olduğu "DoktorPassword" u girmelidir.
@@ -52,7 +52,7 @@ Feature:My Appointments Physician (Doctor) tarafından düzenlenebilmelidir.
 
     Scenario:TC04-Doktor tarafından doldurulacak "prescription ve description" bölümlerini zorunlu olmamalıdır.
       Given HY "url" adresine gidilir
-      Given HY Sayfanın en üst sağ kısmındaki Profile Ikonu'na tiklanir.
+      Given HY Sayfanın en üst sağ kısmındaki Profile Ikonu'na Tıklanır.
       Then  HY Açılan sekmeden Sing in seçecegi seçilmelidir.
       Then  HY Kullanıcı kayıtlı olduğu "DoktorUserName" i girmelidir.
       Then  HY Kullanıcı kayıtlı olduğu "DoktorPassword" u girmelidir.
