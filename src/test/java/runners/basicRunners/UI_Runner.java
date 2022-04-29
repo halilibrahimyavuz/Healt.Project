@@ -13,8 +13,9 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"}, // bu satir ile html,xml,json report olusturabiliyoruz
         features = "src/test/resources/features/uiFeatures", // YENI FERATURE OLUSTURURSAN BURAYI GUNCELLE
         glue = "uiStepdefinitions",
-        tags = "",
+        tags = "@US0018",
         dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
+
 )
 
 public class UI_Runner

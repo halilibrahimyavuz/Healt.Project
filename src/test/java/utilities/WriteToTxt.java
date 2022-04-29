@@ -33,6 +33,8 @@ public class WriteToTxt {
 
     }
 
+
+
     public static void saveAppointData(Appointment appointment){
 
         try{
@@ -103,4 +105,5 @@ public class WriteToTxt {
 
     }
 
-}
+
+    }
