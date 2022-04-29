@@ -9,8 +9,6 @@ import io.restassured.specification.RequestSpecification;
 import pojos.US25_appointment;
 import utilities.AuthenticationYeni;
 import utilities.ConfigReader;
-
-
 import static io.restassured.RestAssured.given;
 import static utilities.WriteToTxt.saveAppointmentApiDatalar;
 
@@ -20,10 +18,11 @@ public class US25Api  {
   US25_appointment us25appointment=new US25_appointment();
   Faker faker=new Faker();
   Response response;
- public static RequestSpecification spec1;
+  public static RequestSpecification spec1;
 
     @Given("kullanici gerekli path params ayarlari yapar")
     public void kullanici_gerekli_path_params_ayarlari_yapar() {
+
        spec1 = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("url25")).build();
        spec1.pathParams("bir","api","iki","appointments");
 
@@ -56,9 +55,11 @@ public class US25Api  {
   //.headers("Authorization","Bearer "+ AuthenticationYeni.generateToken())
 
                 response=given().spec(spec1)
-                .headers("Authorization","Bearer "+ AuthenticationYeni.generateToken()).given()
-                .contentType(ContentType.JSON).body(us25appointment)
-                .when().post("/{bir}/{iki}");
+                .headers("Authorization","Bearer "+ AuthenticationYeni.generateToken())
+                .contentType(ContentType.JSON)
+                        .body(us25appointment)
+                        .when()
+                        .post("/{bir}/{iki}");
 
 
 
@@ -73,8 +74,10 @@ public class US25Api  {
     @Given("kullanici Api kayitlari dogrular")
     public void kullanici_api_kayitlari_dogrular() {
 
-        response.then().statusCode(200);
+        //response.then().statusCode(200);
           response.prettyPrint();
+       // HashMap<String,Object>actual=response.as(HashMap.class);
+       // System.out.println("actual = " + actual);
 
     }
 

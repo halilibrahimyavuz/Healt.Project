@@ -99,7 +99,7 @@ public class US25_StepDefinitions {
                 .sendKeys(faker.idNumber().ssnValid()+Keys.TAB)
                 .sendKeys(faker.internet().emailAddress()+Keys.TAB)
                 .sendKeys("455-455-4555"+Keys.TAB)
-                .sendKeys("27.04.2022"+Keys.TAB).perform();
+                .sendKeys("30.04.2022"+Keys.TAB).perform();
          Thread.sleep(1000);    }
     @Then("Patient  Send an Appointment Request tiklar")
     public void patient_send_an_appointment_request_tiklar() {
@@ -178,10 +178,7 @@ public class US25_StepDefinitions {
     actions.sendKeys(DateTime+Keys.TAB).perform();
 
 
-
-
 }
-
 
     @Then("Patient girilen tarihle sistem tarihi ayni olmali")
     public void patientGirilenTarihleSistemTarihiAyniOlmali() {
@@ -220,12 +217,7 @@ public class US25_StepDefinitions {
 
     // Assert.assertEquals(expectedFormatliTarih,actualFormatliTarih);
 
-
-
-    */
-
-
-
+ */
 
 
     @And("Patient  Send an Appointment Request elementine tiklar")

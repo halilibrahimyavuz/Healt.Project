@@ -12,6 +12,20 @@ public class US25_appointment {
     private String email;
     private String phone;
     private String DateTime;
+    private String id;
+
+    public US25_appointment(String firstname, String lastname, String ssn, String email, String phone, String dateTime, String id) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        Ssn = ssn;
+        this.email = email;
+        this.phone = phone;
+        DateTime = dateTime;
+        this.id = id;
+    }
+
+    public US25_appointment() {
+    }
 
     public String getFirstname() {
         return firstname;
@@ -35,6 +49,10 @@ public class US25_appointment {
 
     public String getDateTime() {
         return DateTime;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setFirstname(String firstname) {
@@ -61,17 +79,8 @@ public class US25_appointment {
         DateTime = dateTime;
     }
 
-    public US25_appointment(String firstname, String lastname, String Ssn, String email, String phone, String DateTime) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.Ssn = Ssn;
-        this.email = email;
-        this.phone = phone;
-        this.DateTime = DateTime;
-    }
-
-    public US25_appointment() {
-
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -83,7 +92,7 @@ public class US25_appointment {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", DateTime='" + DateTime + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }
-

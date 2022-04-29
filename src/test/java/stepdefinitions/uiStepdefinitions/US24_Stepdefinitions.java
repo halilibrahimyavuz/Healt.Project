@@ -3,10 +3,9 @@ package stepdefinitions.uiStepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.apache.poi.ss.formula.functions.T;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.US24_Pages;
 import utilities.ConfigReader;
@@ -19,6 +18,7 @@ public class US24_Stepdefinitions {
 
     US24_Pages us24_pages = new US24_Pages();
     Actions actions = new Actions(Driver.getDriver());
+
 
 
     @Given("Patient URL 'e  gider")
@@ -38,7 +38,8 @@ public class US24_Stepdefinitions {
 
         Thread.sleep(1000);
         us24_pages.signinSekmesiElementi.click();
-
+        WebDriver driver=new ChromeDriver();
+        driver.navigate().refresh();
     }
     @Then("Patient username girer")
     public void patient_username_girer() {
@@ -104,10 +105,11 @@ public class US24_Stepdefinitions {
 
     }
     @Then("Patient Test sonuclarinda id,name,test,default max ve min value,date and description bolumlerini gorur")
-    public void patient_test_sonuclarinda_id_name_test_default_max_ve_min_value_date_and_description_bolumlerini_gorur() throws InterruptedException {
+    public void patient_test_sonuclarinda_id_name_test_default_max_ve_min_value_date_and_description_bolumlerini_gorur() throws InterruptedException, IOException {
 
 
         Thread.sleep(5000);
+        ReusableMethods.getScreenshot("Result Test");
         Assert.assertTrue("75136",us24_pages.idDegeri.isDisplayed());
         Assert.assertTrue("Jc Hettinger",us24_pages.nameDegeri.isDisplayed());
         Assert.assertTrue("40",us24_pages.defaultMinValueDegeri.isDisplayed());
@@ -141,20 +143,7 @@ public class US24_Stepdefinitions {
 
     @And("Sayfayi kapatir")
     public void sayfayiKapatir() {
-        Driver.closeDriver();
+
+      //  Driver.closeDriver();
     }
 }
-/*
-* user connects to the database
-    #kullanici db ye baglanir.
-
-    * user gets the "*" from "bill" table
-    # select * from bill sorgusu yapar.
-
-    * user read all of the "ssn" column data
-    #kullanicin id sutunun oku.
-
-    * verify "bill" tabel "ssn" column contains "060-06-0541"
-    #bill table'deki ssn sutunundaki 060-06-0541 ssnli hasta kayitli mi onu verify et.
-
- */

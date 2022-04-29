@@ -15,6 +15,7 @@ Feature:US25 Randevu Alma
      Then  Patient acilan sayfada bilgileri doldurur
      And   Patient  Send an Appointment Request tiklar
      Then  Patient randevu aldigini dogrular
+     Then Sayfayi kapatir
 
 
     @TC--02
@@ -32,6 +33,7 @@ Feature:US25 Randevu Alma
     And   Patient  Send an Appointment Request elementine tiklar
     Then  Patient randevu alabildigini dogrular
 
+
     Examples:
       |firstname|lastname|Ssn|email|phone|DateTime|
-      |PatientMehmet|PatientMehmet|888-89-4090|PatientMehmet@medunna.com|333-565-2232|27-04-2022|
+      |PatientMehmet|PatientMehmet|888-89-4090|PatientMehmet@medunna.com|333-565-2232|30-04-2022|
