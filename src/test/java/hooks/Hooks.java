@@ -11,22 +11,34 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Hooks {
+
     @Before
     public void setUp(){
 
-
     }
+
+
+
 
     //
     public static RequestSpecification spec;
+    public static RequestSpecification spec01;
 
-    @Before( value = "@DeleteUser")
-    public void setup(){
-
+    @Before
+    public void setup()
+    {
         spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
+    }
 
+
+  /*  @Before( order = 2 , value = "@us25api")
+    public void setUP(){
+
+        spec01 = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("url25")).build();
 
     }
+
+   */
 
 
     @Before(order = 1, value = "@UIRegistration")
@@ -49,10 +61,9 @@ public class Hooks {
     @Before(order = 1, value = "@Appointment")
     public void navigateToLandingPage(){
 
-       // Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("medunna_registration_url"));
 
     }
-
 
 
     @After
@@ -64,7 +75,10 @@ public class Hooks {
             scenario.attach(screenshot, "image/png","screenshots");
         }
 
-        //Driver.closeDriver();
+
+        Driver.closeDriver();
+
+
 
     }
 

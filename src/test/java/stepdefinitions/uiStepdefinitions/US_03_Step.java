@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import pages.US_03_04_Page;
+import pages.US_03_04_17_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -14,8 +14,8 @@ public class US_03_Step {
 
     private WebDriver driver;
 
+    US_03_04_17_Page RPS = new US_03_04_17_Page();
 
-    US_03_04_Page RPS=new US_03_04_Page();
 
     @Given("YE Kullanıcı {string} sayfasına gider")
     public void yeKullanıcıSayfasınaGider(String string) {

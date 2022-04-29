@@ -1,0 +1,1 @@
+Registrant{ssn='237-51-9716', firstname='Kenia', lastname='Cummings', username='KeniaCummings', email='micaela.lebsack@yahoo.com', password='y2&VN52ZQlqVskbMjJ'}
