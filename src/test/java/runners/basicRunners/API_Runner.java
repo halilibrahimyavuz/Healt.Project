@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-        plugin={"html:target/cucumber-html-reports/cucumber.html", // buradaki / \\ idi, degistirdim, emin degilim
-                "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"}, // bu satir ile html,xml,json report olusturabiliyoruz
+        plugin={"html:target/cucumber-html-reports/API_cucumber.html", // buradaki / \\ idi, degistirdim, emin degilim
+                "json:target/json-reports/API_cucumber.json",
+                "junit:target/xml-report/API_cucumber.xml"}, // bu satir ile html,xml,json report olusturabiliyoruz
         features = "src/test/resources/features/apiFeatures", // YENI FERATURE OLUSTURURSAN BURAYI GUNCELLE
-        glue = "apiStepdefinitions",
-        tags = "@US15API",
+        glue = "stepdefinitions/apiStepdefinitions",
+        tags = "",
         dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
 
 )

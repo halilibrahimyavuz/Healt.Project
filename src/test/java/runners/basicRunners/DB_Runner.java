@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-        plugin={"html:target/cucumber-html-reports/cucumber.html", // buradaki / \\ idi, degistirdim, emin degilim
-                "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"}, // bu satir ile html,xml,json report olusturabiliyoruz
+        plugin={"html:target/cucumber-html-reports/DB_cucumber.html", // buradaki / \\ idi, degistirdim, emin degilim
+                "json:target/json-reports/DB_cucumber.json",
+                "junit:target/xml-report/DB_cucumber.xml"}, // bu satir ile html,xml,json report olusturabiliyoruz
         features = "src/test/resources/features/dbFeatures", // YENI FERATURE OLUSTURURSAN BURAYI GUNCELLE
-        glue = "dbStepdefinitions",
-        tags = "@db_physician",
+        glue = "stepdefinitions/dbStepdefinitions",
+        tags = "",
         dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
 )
 
