@@ -14,8 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/uiFeatures", // YENI FERATURE OLUSTURURSAN BURAYI GUNCELLE
         glue = "stepdefinitions/uiStepdefinitions",
         tags = "",
-        dryRun = false
-        // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
+        dryRun = false // step definition olusturmak icin calistirdiginda burayı true yapmayi unutma
 )
 
 public class UI_Runner
