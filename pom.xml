@@ -189,7 +189,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <includes>
-                        <include>**/runners/*TestRunner*.java</include> <!-- bunu iz elimmizle kendimmize gore duzeltiyoruz, case sensitive'dir-->
+                        <include>**/runners/*runner*.java</include> <!-- bunu iz elimmizle kendimmize gore duzeltiyoruz, case sensitive'dir-->
                     </includes>
                 </configuration>
             </plugin>
@@ -209,7 +209,7 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/runners/*TestRunner*.java</include> <!-- burada degisiklik yapılacak -->
+                        <include>**/runners/*runner*.java</include> <!-- burada degisiklik yapılacak -->
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
